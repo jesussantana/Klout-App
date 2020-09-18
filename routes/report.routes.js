@@ -12,9 +12,6 @@ router.get("/", (req, res, next) => {
 });
 
 
-
-
-
 router.get("/:id", (req, res, next) => {
   Report.findById(req.params.id)
     .then((report) => {

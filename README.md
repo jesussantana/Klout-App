@@ -1,4 +1,4 @@
-# KLOUT-BACKEND
+# MERN-PROJECT-BACKEND
 
 KLOUT
 
@@ -64,7 +64,7 @@ REAL Transactions
 | ------ | -------------- | -------------------------------------------------------- |
 | GET    | /              | Renders index                                            |
 | GET    | api/auth/login | Redirects to /app/ if user logged in. Renders auth/login |
-| POST   | api/auth/login | Return User data if user logged in.                    |
+| POST   | api/auth/login | Return User data if user logged in.                      |
 
 ```
 body:
@@ -72,8 +72,8 @@ body:
     - password
 ```
 
-| Method | URL          | Description                                                  |
-| ------ | ------------ | ------------------------------------------------------------ |
+| Method | URL             | Description                                               |
+| ------ | --------------- | --------------------------------------------------------- |
 | POST   | api/auth/logout | Logout                                                    |
 | GET    | api/auth/signup | Redirects to /app/ if user logged in. Renders auth/signup |
 | POST   | api/auth/signup | Add user and return user data                             |
@@ -86,11 +86,11 @@ body:
     - password
 ```
 
-| Method | URL          | Description                                                  |
-| ------ | ------------ | ------------------------------------------------------------ |
-| GET    | api/user     | Return User                                                  |
-| PUT    | api/user     | Update User                                                  |
-| DELETE | api/user     | Delete User                                                  |
+| Method | URL      | Description |
+| ------ | -------- | ----------- |
+| GET    | api/user | Return User |
+| PUT    | api/user | Update User |
+| DELETE | api/user | Delete User |
 
 ```
 body:
@@ -98,12 +98,12 @@ body:
     - email
 ```
 
-| Method | URL          | Description                                                     |
-| ------ | ------------ | --------------------------------------------------------------- |
-| POST   | api/network  | Add Network                                                     |
-| GET    | api/network  | Return Network                                                  |
-| PUT    | api/network  | Update Network                                                  |
-| DELETE | api/network  | Delete Network                                                  |
+| Method | URL         | Description    |
+| ------ | ----------- | -------------- |
+| POST   | api/network | Add Network    |
+| GET    | api/network | Return Network |
+| PUT    | api/network | Update Network |
+| DELETE | api/network | Delete Network |
 
 
 ```
@@ -112,10 +112,10 @@ body:
     - twitter
     - instagram
 ```
-| Method | URL          | Description                                                  |
-| ------ | ------------ | ------------------------------------------------------------ |
-| GET    | api/support  | Return Ticket Support                                        |
-| POST   | api/support  | Add Ticket                                                   |
+| Method | URL         | Description           |
+| ------ | ----------- | --------------------- |
+| GET    | api/support | Return Ticket Support |
+| POST   | api/support | Add Ticket            |
 
 
 ```
@@ -226,7 +226,7 @@ Support model
 The url to your repository and to your deployed project
 
 - [Repository Link Frontend] (https://github.com/jesussantana/MERN-PROJECT-FRONTEND)
-- [Repository Link Backend] (https://github.com/jesussantana/MERN-PROJECT-BACKEND)
+- [Repository Link Backend] (https://github.com/jesussantana/KLOUT)
 
 - [Deploy Link](https://klout.herokuapp.com/)
 

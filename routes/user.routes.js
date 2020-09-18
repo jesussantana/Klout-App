@@ -13,7 +13,7 @@ router.get("/", async (req, res, next) => {
 });
 router.get("/:id", async (req, res, next) => {
   try {
-    const user = await UserController.get(req.params.id);
+    const user = await UserController.get(/*req.params.id*/req.session.user._id);
     res.status(200).json(user);
   } catch (err) {
     res.status(500).json(err);

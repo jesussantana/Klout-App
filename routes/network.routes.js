@@ -4,24 +4,31 @@ const UserController = require("../controllers/user.controller");
 const NetworkController = require("../controllers/network.controller");
 
 router.get("/network", async (req, res, next) => {
-    try {
-        const networks = await NetworkController.list();
-        res.status(200).json(networks);
-      } catch (err) {
-        res.status(500).json(err);
-      }
+  try {
+    const networks = await NetworkController.list();
+    res.status(200).json(networks);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get("/network/:id", async (req, res, next) => {
-    try {
-        const network = await NetworkController.get(req.params.id);
-        res.status(200).json(network);
-      } catch (err) {
-        res.status(500).json(err);
-      }
+  try {
+    const network = await NetworkController.get(req.params.id);
+    res.status(200).json(network);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.post("/network", async (req, res, next) => {});
+router.post("/network", async (req, res, next) => {
+  try {
+    const network = await NetworkController.create(req.body);
+    res.status(200).json(network);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.put("/network/:id", async (req, res, next) => {});
 
