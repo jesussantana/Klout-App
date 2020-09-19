@@ -10,7 +10,7 @@ Ironhack project at end of module 3 of Barcelona Full Stack Web Development Part
 
 # Link to App:
 
-https://klout.herokuapp.com/
+- [Klout](https://klout.herokuapp.com/)
 
 ## Description
 
@@ -132,11 +132,40 @@ body:
 ```
 User model
 
-- username: String
-- email: String
-- name: String
-- password: String
-- image: String
+{
+    name: {
+      type: String,
+      required: [true, "The name is required"],
+    },
+    surname: {
+      type: String,
+      required: [true, "The surname is required"],
+    },
+    email: {
+      type: String,
+      unique: true,
+      lowercase: true,
+      trim: true,
+      match: [/^\S+@\S+\.\S+$/, "Invalid email address"],
+      required: [true, "The email is required"],
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    imageUrl: {
+      type: String,
+      match: [/^(ftp|http|https):\/\/[^ "]+$/, "Invalid url"],
+      default:
+        "https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/avat-01-512.png",
+    },
+
+    description: {
+      type: String,
+      default: "There isn't any description for this user yet.",
+    },
+  },
+  { timestamps: true }
  
 
 ```
@@ -144,76 +173,125 @@ User model
 ```
 Network model
 
-  facebook: {
-    - username: String
-    - password: String
-  }
-
-  twitter: {
-    - username: String
-    - password: String
-  }
-
-  instagram: {
-    - username: String
-    - password: String
-  }
-
-  user: User id
+   {
+      facebook: {
+        type: String,
+        match: [
+          /^(https?:\/\/){0,1}(www\.){0,1}facebook\.com/gm,
+          "Invalid Facebook address",
+        ],
+        default: "No facebook account information provided",
+      },
+      twitter: {
+        type: String,
+        match: [
+          /^(https?:\/\/){0,1}(www\.){0,1}twitter\.com/gm,
+          "Invalid Facebook address",
+        ],
+        default: "No twitter account information provided",
+      },
+      instagram: {
+        type: String,
+        match: [
+          /^(https?:\/\/){0,1}(www\.){0,1}instagram\.com/gm,
+          "Invalid Instagram address",
+        ],
+        default: "No instagram account information provided",
+      },
+      linkedin: {
+        type: String,
+        match: [
+          /^(https?:\/\/){0,1}(www\.){0,1}linkedin\.com/gm,
+          "Invalid Instagram address",
+        ],
+        default: "No linkedin account information provided",
+      },
+    },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+    
+  },
+  { timestamps: true }
 
 ```
 ```
 Report model
 
-  facebook: {
-    - followers: Number
-    - likes: Number
-    - comments: Number
-    - shares: Number
-  }
-
-  twitter: {
-    - followers: Number
-    - likes: Number
-    - comments: Number
-    - retweet: Number
-  }
-
-  Instagram: {
-    - followers: Number
-    - likes: Number
-    - comments: Number
-    - shares: Number
-  }
-
-  user: User id
+        facebook: {
+          follows: { type: Number },
+          like: { type: Number },
+          rate: { type: Number },
+        },
+        twitter: {
+          follows: { type: Number },
+          like: { type: Number },
+          rate: { type: Number },
+        },
+        Instagram: {
+          follows: { type: Number },
+          like: { type: Number },
+          rate: { type: Number },
+        },
+        Linkedin: {
+          follows: { type: Number },
+          like: { type: Number },
+          rate: { type: Number },
+        },
+    
+    
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 
 ```
 ```
 Ranking model
 
-  user: User id
+    facebook: {
+      folowers: { type: Number, required: true },
+      likes: { type: String, required: true },
+      comments: { type: String, required: true },
+      shares: { type: String, required: true },
+    },
+    twitter: {
+      folowers: { type: Number, required: true },
+      likes: { type: String, required: true },
+      comments: { type: String, required: true },
+      retweets: { type: String, required: true },
+    },
+    instagram: {
+      folowers: { type: Number, required: true },
+      likes: { type: String, required: true },
+      comments: { type: String, required: true },
+      shares: { type: String, required: true },
+    },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  
  
 
 ```
 ```
 Log model
 
-  date: Date
-  user: User id
-  description: String
+  {
+    date: { type: Date, required: true },
+    user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
+    description: { type: String, required: true },
+  },
+  { timestamps: true }
  
 
 ```
 ```
 Support model
 
-  user: User id
-  name: String
-  email: String
-  subject: String
-  message: String
-  status: String
+  {
+    date: { type: Date, required: true },
+    user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
+    name: { type: String, required: true },
+    username: { type: String, required: true },
+    subject: { type: String },
+    message: { type: String },
+    status: { type: String, required: true },
+  },
+  { timestamps: true }
  
 
 ```
@@ -225,8 +303,8 @@ Support model
 
 The url to your repository and to your deployed project
 
-- [Repository Link Frontend] (https://github.com/jesussantana/MERN-PROJECT-FRONTEND)
 - [Repository Link Backend] (https://github.com/jesussantana/KLOUT)
+- [Repository Link Frontend] (https://github.com/jesussantana/KLOUT-FRONTEND)
 
 - [Deploy Link](https://klout.herokuapp.com/)
 
@@ -242,4 +320,4 @@ The url to your repository and to your deployed project
 
 The url to your presentation slides
 
-[Slides Link](https://prezi.com/i/0g80uhe7lw96/)
+- [Slides Link](https://prezi.com/i/0g80uhe7lw96/)
