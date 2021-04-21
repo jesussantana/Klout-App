@@ -6,7 +6,7 @@ Ironhack project at end of module 3 of Barcelona Full Stack Web Development Part
 
 # Developers:
 
-- [Chus Santana](https://github.com/chus-santana/)
+- [Chus Santana](https://www.linkedin.com/in/chus-santana/)
 
 # Link to App:
 
@@ -304,7 +304,7 @@ Support model
 The url to your repository and to your deployed project
 
 - [Repository Link Backend] (https://github.com/jesussantana/Klout-App)
-- [Repository Link Frontend] (https://github.com/jesussantana/Klout)
+- [Repository Link Frontend] (https://github.com/jesussantana/Klout-Front-End)
 
 - [Deploy Link](https://klout.herokuapp.com/)
 
