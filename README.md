@@ -58,7 +58,7 @@ List of other features outside of the MVPs scope
 
 REAL Transactions
 
-## ROUTES:  POR DEFINIR
+## ROUTES: 
 
 | Method | URL            | Description                                              |
 | ------ | -------------- | -------------------------------------------------------- |
